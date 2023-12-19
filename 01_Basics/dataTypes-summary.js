@@ -61,3 +61,29 @@ const myFunction = function () {
 */
 
 // console.log(typeof myFunction); // It will return the fuction (known as Object Function).
+
+
+// +++++++++++++++++++++++++++ Stack and Heap memory +++++++++++++++
+
+// Stack (Primitive data types) and Heap( used in non-primitive data types)
+
+let myName = "Pravin ";
+let anotherName = myName;
+anotherName = "Tejas"
+
+console.log(myName);
+console.log(anotherName);
+
+let user = {
+    email:"user@google.com",
+    upi:"user@ybl"
+}
+
+console.log(user);
+
+let newUser = user;
+// Now change the data inside the user
+newUser.email = "user@facebook.com";
+
+// now print the both the objects
+console.log(user, newUser);
