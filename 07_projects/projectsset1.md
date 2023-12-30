@@ -191,3 +191,52 @@ function newGame() {
 }
 
 ```
+
+
+Project 6 : Unlimited Colors
+
+
+```javascript
+
+// generate the hex color
+
+const generateHexColor = () => {
+  const hex = '0123456789ABCEDF';
+  let color = '#';
+
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+// get the reference of start
+
+let bgRef;
+const body = document.querySelector('body');
+
+const startChangingColor = function () {
+  if (!bgRef) {
+    bgRef = setInterval(changeBg, 1000);
+  }
+
+  function changeBg() {
+    const bgColor = generateHexColor();
+    body.style.backgroundColor = bgColor;
+    console.log(bgColor);
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(bgRef);
+  bgRef = null;
+};
+
+// Start
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+// stop
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+```
